@@ -1,0 +1,738 @@
+$black: #111111;
+$dataFontColor: #888888;
+$borderAndBackground: #d4d4d4;
+$uploadBackgroundColor: #f1f1f1;
+$inputBackgroundColor: #f8f8f8;
+$buttonFontColor: #ffffff;
+
+$buttonColor: #0095ff;
+$unactiveButtonColor: #b2dfff;
+
+$breakpoint-phone: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
+@mixin flex-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin input {
+  background-color: $inputBackgroundColor;
+  border: thin solid $borderAndBackground;
+  border-radius: 2px;
+}
+
+@mixin userIcon {
+  height: 40px;
+  width: 40px;
+}
+
+@mixin formBtn {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 2px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../Roboto/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url(../Roboto/Roboto-Medium.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url(../Roboto/Roboto-Black.ttf);
+  font-weight: bolder;
+}
+
+* {
+  font-family: 'Roboto';
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+.hero {
+  @include flex-space();
+  width: 100vw;
+  height: 12vh;
+  box-shadow: 5px 5px 10px $uploadBackgroundColor;
+  align-items: center;
+  padding-left: 7rem;
+  
+    .search {
+      display: flex;
+      width: 502px;
+      height: 44px;
+      .bar {
+        width: 75%;
+        font-size: 18px;
+        border-radius: 2px;
+        border: solid 1px $borderAndBackground;
+        border-right: none;
+        border-top-right-radius: none;
+        border-bottom-right-radius: none;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        width: 22%;
+        border: solid 1px $borderAndBackground;
+        border-radius: 2px;
+        background-color: $inputBackgroundColor;
+        cursor: pointer;
+        &:hover {
+            background-color: $borderAndBackground;
+        .mag {
+          height: 20px;
+          padding: 0 2rem;
+          }
+        }
+      }
+    }
+  
+}
+
+.user {
+  @include flex-space();
+  margin-right: 10rem;
+  align-items: center;
+  .upload {
+    margin-right: 4rem;
+    cursor: pointer;
+  }
+  .johnG {
+    @include userIcon();
+    object-position: 50 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+}
+
+.main {
+  display: flex;
+  margin-left: 7rem;
+  width: 100vw;
+  height: 100%;
+  &__first {
+    width: 55%;
+    video {
+      margin-top: 3rem;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $borderAndBackground;
+    .icons {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+     
+      img {
+        cursor: pointer;
+      }
+      span {
+        color: $dataFontColor;
+        padding-left: 0.8rem;
+        padding-right: 0.5rem;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+  h3 {
+    font-weight: 500;
+  }
+  .views-count {
+    margin: 0;
+    color: $dataFontColor;
+    font-weight: 700;
+  }
+  .side-container {
+    margin-top: 1.5rem;
+    width: 35%;
+  }
+  .comment-container {
+    display: flex;
+  }
+}
+
+.author {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $borderAndBackground;
+  &__info {
+    display: flex;
+    padding-top: 1rem;
+  }
+  &__icon {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    height: 48px;
+    width: 48px;
+    object-position: 50 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: $borderAndBackground;
+  }
+  &__subscribe {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    background-color: $buttonColor;
+    width: 160px;
+    height: 40px;
+    border-radius: 2px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: blue;
+    }
+    .first-sub {
+      color: $buttonFontColor;
+      font-size: 14px;
+      margin: 0.6rem 0;
+    }
+    .sec-sub {
+      color: $borderAndBackground;
+      font-size: 14px;
+      margin: 0.6rem 0;
+      
+    }
+  }
+  &__title {
+    padding-right: 50%;
+    h5 {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    span {
+      color: $dataFontColor;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 0 4rem;;
+    span {
+      font-size: 14px;
+    }
+    &__more {
+      padding-top: 2rem;
+      color: $dataFontColor;
+      font-size: 14px;
+      font-weight: 600;
+      padding-top: 2rem;
+   
+    }
+    
+  }
+  
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  justify-content: flex-start;
+  width: 100%;
+  &__user {
+    display: flex;
+    .johnG {
+      @include userIcon();
+      object-position: 50 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 1.4rem;
+    }
+  }
+  form {
+    width: 100%;
+    padding-bottom: 2rem;
+    .input {
+      width: 100%;
+      font-size: 14px;
+      border: 0;
+      border-bottom: solid thin $borderAndBackground;
+      resize: none;
+      outline: none;
+      &:focus-within {
+        font-weight: 800;
+        color: $black;
+      }
+    }
+    .button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.7rem;
+      &__post {
+        @include formBtn();
+        transition: all 0.5s ease;
+        background-color: $unactiveButtonColor;
+        color: $buttonFontColor;
+        &:hover {
+          background-color: $buttonColor;
+        }
+      }
+      &__cancel {
+        @include formBtn();
+        color: $black;
+        transition: all 0.5s ease;
+        margin-right: 0.5rem;
+        &:hover {
+          background-color: #111111;
+          color: #ffffff
+        }
+      }
+    }
+  }
+
+  .posted-container {
+    padding-bottom: 2rem;
+  }
+
+  .comment-post {
+    display: flex;
+    border-bottom: thin solid $borderAndBackground;
+    margin-top: 0.5rem;
+    img {
+      @include userIcon();
+      object-position: 50 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    &__contain {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    &__usercontain {
+      display: flex;
+      h3 {
+        font-size: 14px;
+        padding-right: 1rem;
+        margin: 0;
+      }
+      h4 {
+        font-size: 12px;
+        color: $dataFontColor;
+        margin: 0;
+      }
+    }
+    &__comment {
+      p {
+        margin-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 14px;
+      }
+    }
+  }
+  
+}
+
+.side-grid {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+      color: $buttonColor;
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+  .side {
+    display: flex;
+    margin-right: 6rem;
+    &__text-container {
+      padding-top: 0.5rem;
+    }
+    &__image {
+      width: 12vw;
+      height: 15vh;
+      object-position: 0 50%;
+      object-fit: cover;
+      padding-top: 0.3rem;
+      padding-right: 0.6rem;
+      cursor: pointer;
+    }
+    &__content {
+      padding-top: 0.3rem;
+      margin: 0;
+      font-size: 14px;
+    }
+    &__title {
+      margin: 0.5rem 0;
+      font-size: 13px;
+      color: $dataFontColor;
+    }
+    &__views {
+      margin: 0;
+      color: $dataFontColor;
+    }
+    
+  }
+  
+}
+
+
+.uploads {
+  background-color: $uploadBackgroundColor;
+  height: 100vh;
+  &__button {
+    cursor: pointer;
+    border: none;
+    background-color: $buttonFontColor;
+    margin: 4rem 8rem;
+    width: 55%;
+    height: 55%;
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    h3 {
+      color: $dataFontColor;
+      font-size: 16px;
+    }
+  }
+}
+
+.upload-body {
+  background-color: $uploadBackgroundColor;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  &__status-body {
+    background-color: $buttonFontColor;
+    display: flex;
+    margin: 3rem 7rem;
+    height: 80%;
+    .video-up {
+      display: flex;
+      flex-direction: column;
+      margin: 1.3rem 0 0 1.3rem;
+      img {
+        width: 12vw;
+        height: 15vh;
+        object-position: 0 50%;
+        object-fit: cover;
+      }
+      h1 {
+        font-size: 14px;
+        margin-bottom: 0.2rem;
+      }
+      h2 {
+        margin: 0;
+        font-size: 14px;
+        color: $dataFontColor;
+      }
+    }
+    form {
+      margin: 10rem 0 0 1.5rem;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 16px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+      }
+      .title-input {
+        @include input();
+        margin-bottom: 2rem;
+        width: 40rem;
+        height: 2rem;
+      }
+      input[type=text] {
+        padding-left: 0.5rem;
+        font-size: 14px;
+      }
+      .description-input {
+        @include input();
+        width: 40.3rem;
+        height: 4rem;
+        resize: none;
+        font-size: 14px;
+      }
+      button {
+        @include formBtn();
+        margin-top: 2rem;
+        transition: all 0.5s ease;
+        background-color: $unactiveButtonColor;
+        &:hover {
+          background-color: $buttonColor
+        }
+        h3 {
+          color: $buttonFontColor;
+          font-size: 14px;
+          font-weight: 700;
+          margin: 0.6rem 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .main {
+    margin-left: 5rem;
+    .side-container {
+      width: 42%;
+    }
+  }
+  
+  .side-grid {
+    margin-left: 1rem;
+    margin-right: 5rem;
+    .side {
+      margin: 0;
+      &__image {
+        width: 15vw;
+        height: 15vh;
+      }
+    }
+  }
+  .icons {
+    align-items: center;
+  }
+  .author {
+    &__title {
+      padding-right: 31%;
+    }
+  }
+  .comments {
+    .input {
+      width: 31rem;
+    }
+  }
+
+  .upload-body {
+    &__status-body {
+      .video-up {
+        img {
+          width: 17vw;
+          height: 15vh;
+        }
+      }
+      form {
+        width: 69%;
+        .title-input {
+          width: 100%;
+        }
+        .description-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .hero {
+    .logo {
+      padding-right: 3rem;
+    }
+    .search {
+      padding-right: 2rem;
+    }
+  }
+  .main {
+    margin-left: 4rem;
+    .side-container {
+      width: 50%;
+    }
+  }
+  .side-grid {
+    margin-right: 4rem;
+    .side {
+      margin-bottom: 0.5rem;
+      &__image {
+        width: 16vw;
+        height: 15vh;
+      }
+    }
+  }
+  .icons {
+    align-items: center;
+  }
+  .author {
+    &__info {
+      display: block;
+    }
+    &__title {
+      padding-right: 10rem;
+    }
+    .description {
+      padding-left: 0;
+    }
+  }
+  .comments {
+    .input {
+      width: 22rem;
+    }
+  }
+
+  .uploads {
+    &__button {
+      margin-left: 3.5rem;
+      width: 85%;
+      height: 70%;
+    }
+  }
+
+  .upload-body {
+    &__status-body {
+      .video-up {
+        img {
+          width: 22vw;
+          height: 15vh;
+        }
+      }
+      form {
+        width: 55%;
+        .title-input {
+          width: 100%;
+        }
+        .description-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $breakpoint-phone) {
+  .hero {
+    height: 15%;
+    padding: 1rem 0;
+    justify-content: space-between;
+    .logo {
+      padding-right: 2rem;
+    }
+    .search {
+      padding-right: 2rem;
+      button {
+        width: 3rem;
+      }
+      .bar {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    &__first {
+      width: 85%;
+    }
+    .side-container {
+      width: 85%;
+    }
+  }
+  
+  .side-grid {
+    margin: 0;
+    .side {
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+      &__image {
+        width: 70vw;
+        height: 25vh;
+      }
+      &__title {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .description {
+    padding-left: 0;
+  }
+  .icons {
+    align-content: space-between;
+  }
+
+  .comments {
+    .input {
+      width: 18.5rem;
+    }
+  }
+
+  .uploads {
+    &__button {
+      margin-left: 2rem;
+      width: 85%;
+      height: 70%;
+    }
+  }
+
+  .upload-body {
+    &__status-body {
+      flex-direction: column;
+      margin: 2rem 4rem;
+      height: 90%;
+      .video-up {
+        img {
+          width: 59vw;
+          height: 22vh;
+        }
+        h1 {
+          font-size: 16px;
+          text-align: center;
+        }
+        h2 {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+      form {
+        margin-top: 2rem;
+        width: 80%;
+        .title-input {
+          width: 100%;
+        }
+        .description-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+}
